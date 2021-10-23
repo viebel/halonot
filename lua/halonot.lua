@@ -52,6 +52,8 @@ function set_window_management_keymaps()
   vim.api.nvim_set_keymap('n', '<leader>wd', ':hide<CR>', { noremap = true, silent = true })
 end
 
-set_window_management_keymaps()
+return {
+  setup = set_window_management_keymaps,
+}
 
 
