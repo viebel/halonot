@@ -47,7 +47,7 @@ local function set_key_map(k1, k2)
 end
 
 local function set_window_management_keymaps()  
-  local winkeys = {'j', 'k', 'h', 'l', '=', 'w', 'o', 'x', '>', '<', 'J', 'K', 'H', 'L', '|', '_'}
+  local winkeys = {'j', 'k', 'h', 'l', '=', 'w', 'o', 'x', '>', '<', 'J', 'K', 'H', 'L', '|', '_', 'p'}
   for _, winkey in ipairs(winkeys) do
     set_key_map(winkey, winkey)
   end
@@ -57,7 +57,7 @@ local function set_window_management_keymaps()
     ['{'] = '-',
     ['}'] = '+',
     ['m'] = 'o',
-    ['<TAB>'] = 'w',
+    ['<TAB>'] = 'p',
   }
   for winkey, k in pairs(keymap_conversion) do
     set_key_map(winkey, k)
