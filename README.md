@@ -1,11 +1,11 @@
 # halonot
 
+## Description
 A nvim plugin for window management in the sprit of Spacemacs
 
 Most keymaps are the same as native vim commands where we use `<leader>w` instead of `<C-w>`. For instance, we resize windows with `<leader>w=` instead of `<C-w>=`. Two commands have been fixed: `|` (full width) and `_` (full height) so that the current window take the whole width or height.
 
 Some keymaps are a remapping for convenience, e.g `<leader>wm` for `<c-w>o` to maximize the current window.
-
 
 Here is the full keymap list:
 
@@ -39,6 +39,18 @@ Here is the full keymap list:
 | `K`      | Move window to far bottom | 
 | `H`      | Move window to far left | 
 | `L`      | Move window to far right | 
+
+## Install
+
+Using [https://github.com/wbthomason/packer.nvim](packer):
+
+~~~lua
+use {'viebel/halonot', 
+    config = function() 
+      require('halonot').setup({main_key = 'w'})
+    end
+}
+~~~
 
 # TODOs
 
