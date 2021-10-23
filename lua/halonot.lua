@@ -38,17 +38,35 @@ local function winkey_cmd(k)
   end
 end
 
-local function set_window_management_keymaps()  
-  local winkeys = {'j', 'k', 'h', 'l', '=', 'w', 'o', 'x', '+', '-', '>', '<', 'J', 'K', 'H', 'L', '|', '_'}
-  for _, winkey in ipairs(winkeys) do
-    vim.api.nvim_set_keymap(
+local function set_key_map(k1, k2) 
+  vim.api.nvim_set_keymap(
       'n',
-      '<leader>w' .. winkey, 
-      winkey_cmd(winkey),
+      '<leader>w' .. k1, 
+      winkey_cmd(k2),
       { noremap = true, silent = true })
+end
+
+local function set_window_management_keymaps()  
+  local winkeys = {'j', 'k', 'h', 'l', '=', 'w', 'o', 'x', '>', '<', 'J', 'K', 'H', 'L', '|', '_'}
+  for _, winkey in ipairs(winkeys) do
+    set_key_map(winkey, winkey)
   end
+  local keymap_conversion = {
+    [']'] = '>',
+    ['['] = '<',
+    ['{'] = '-',
+    ['}'] = '+',
+    ['m'] = 'o',
+    ['<TAB>'] = 'w',
+  }
+  for winkey, k in pairs(keymap_conversion) do
+    set_key_map(winkey, k)
+  end
+
   vim.api.nvim_set_keymap('n', '<leader>wv', ':vsplit<CR>', { noremap = true, silent = true })
+  vim.api.nvim_set_keymap('n', '<leader>w/', ':vsplit<CR>', { noremap = true, silent = true })
   vim.api.nvim_set_keymap('n', '<leader>ws', ':split<CR>', { noremap = true, silent = true })
+  vim.api.nvim_set_keymap('n', '<leader>w-', ':split<CR>', { noremap = true, silent = true })
   vim.api.nvim_set_keymap('n', '<leader>wd', ':hide<CR>', { noremap = true, silent = true })
 end
 
