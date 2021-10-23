@@ -42,4 +42,4 @@ Here is the full keymap list:
 
 # TODOs
 
-[ ] Make `<leader>w` configurable
+[X] Make `<leader>w` configurable
