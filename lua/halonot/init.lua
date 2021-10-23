@@ -38,7 +38,7 @@ local function winkey_cmd(k)
   end
 end
 
-local function set_window_management_keymaps()  
+function set_window_management_keymaps()  
   local winkeys = {'j', 'k', 'h', 'l', '=', 'w', 'o', 'x', '+', '-', '>', '<', 'J', 'K', 'H', 'L', '|', '_'}
   for _, winkey in ipairs(winkeys) do
     vim.api.nvim_set_keymap(
