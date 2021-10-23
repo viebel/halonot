@@ -15,7 +15,7 @@ Here is the full keymap list:
 | `v`      | Split window right | 
 | `-`      | Split window below | 
 | `s`      | Split window below | 
-| `|`      | Maximize current window horizontally | 
+| `\|`      | Maximize current window horizontally | 
 | `_`      | Maximize current window vertically | 
 | `d`      | Close current window | 
 | `m`      | Maximize current window | 
