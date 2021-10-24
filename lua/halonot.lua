@@ -20,7 +20,7 @@ end
 local function close_window_if_small(n)
   local width = tonumber(vim.api.nvim_exec('echo winwidth(' .. n .. ')', true))
   local height = tonumber(vim.api.nvim_exec('echo winheight(' .. n .. ')', true))
-  if ((width <  1) or (height < 1)) then
+  if ((width <  2) or (height < 2)) then
     close_window(n)
   end
 end
