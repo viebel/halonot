@@ -25,7 +25,7 @@ local function close_window_if_small(n)
   end
 end
 
-local function close_small_windows()
+function close_small_windows()
   for j = num_windows(), 1, -1 do
     close_window_if_small(j)
   end
