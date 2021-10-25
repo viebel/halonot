@@ -3,7 +3,7 @@
 ## Description
 A nvim plugin for window management in the sprit of Spacemacs
 
-Most keymaps are the same as native vim commands where we use `<leader>w` instead of `<C-w>`. For instance, we resize windows with `<leader>w=` instead of `<C-w>=`. Two commands have been fixed: `|` (full width) and `_` (full height) so that the current window take the whole width or height.
+Most keymaps are the same as native vim commands where we use `<leader>w` instead of `<C-w>`. For instance, we resize windows with `<leader>w=` instead of `<C-w>=`. Two commands have been fixed: `|` (full width) and `_` (full height) so that the current window take the whole width or height, whereas in native vim, the other window still has a width or height of 1.
 
 Some keymaps are a remapping for convenience, e.g `<leader>wm` for `<c-w>o` to maximize the current window.
 
