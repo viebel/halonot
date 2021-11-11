@@ -62,7 +62,7 @@ KEYMAPS						*halonot-keymaps*
     
 
 ------------------------------------------------------------------------------
-OPTIONS						*halonot-option*
+OPTIONS						*halonot-options*
 
 	g:halonot_key				*g:halonot_key*
 	    By default, the main key used by halonot is `<Leader>w`. If you
