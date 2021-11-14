@@ -5,34 +5,10 @@ vim.o.winminheight = 0
 
 vim.g.halonot_key = 'o'
 
-local function num_windows()
-  return vim.api.nvim_eval("winnr('$')")
-end
-
-local function close_window(n)
-  if (n > 0) then
-    vim.cmd(n .. "wincmd c")
-  end
-end
-
-local function close_window_if_small(n)
-  local width = vim.api.nvim_eval('winwidth(' .. n .. ')')
-  local height = vim.api.nvim_eval('winheight(' .. n .. ')')
-  if ((width <  2) or (height < 2)) then
-    close_window(n)
-  end
-end
-
-function close_small_windows()
-  for j = num_windows(), 1, -1 do
-    close_window_if_small(j)
-  end
-end
-
 local function winkey_cmd(k)
   local basic_cmd = ':wincmd ' .. k 
   if k == '|' or k == '_' then
-    return basic_cmd .. ' | lua close_small_windows()<CR>'
+    return basic_cmd .. ' | lua vim.fn["halonot#close_small_windows"]()<CR>'
   else
     return basic_cmd .. '<CR>'
   end
@@ -75,6 +51,7 @@ local key_cmd = {
   ['d'] = 'hide',
 }
 
+
 local function set_window_management_keymaps(opts)  
   local leader_key = opts['main_key'] or default_main_key
 
@@ -90,6 +67,8 @@ local function set_window_management_keymaps(opts)
     set_key_map_to_cmd(leader_key, winkey, cmd)
   end
 end
+
+set_window_management_keymaps({})
 
 return {
   setup = set_window_management_keymaps,
